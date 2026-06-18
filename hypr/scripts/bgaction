@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+#start swwww
+awww query || awww-daemon
+
+#figure out which waybar theme is set
+THEMEIS=$(readlink -f ~/.config/waybar/style.css | cut -d '-' -f2)
+
+#show the correct wallpapper based on the theme
+if [ $THEMEIS == "dark.css" ]; then
+    awww img ~/.config/hypr/wallpaper-dark.jpg
+else
+    awww img ~/.config/hypr/wallpaper.jpg
+fi

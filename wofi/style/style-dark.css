@@ -1,0 +1,53 @@
+window {
+    margin: 0;
+    border: none;
+    background-color: #1e1e2e;
+    border-radius: 10px;
+}
+
+#outer-box {
+    background: transparent;
+    border-radius: 10px;
+    padding: 8px;  /* hace que los items no queden pegados al borde */
+}
+
+#inner-box {
+    background-color: #1e1e2e;
+    border-radius: 15px;
+    padding: 4px;
+}
+
+#scroll {
+    background: transparent;
+    border-radius: 15px;
+}
+
+/* Input */
+#input {
+    padding: 6px 20px;
+    margin-bottom: 20px;
+    border: none;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    border-radius: 20px;
+}
+
+/* Entries */
+#entry {
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+}
+
+#entry:selected {
+    background-color: #89b4fa;
+    color: #1e1e2e;
+    border: none;
+    border-radius: 10px;
+}
+
+#text:selected {
+    background-color: #89b4fa;
+    color: #1e1e2e;
+}
+
