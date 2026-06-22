@@ -169,7 +169,7 @@ fi
 read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to copy config files? (y,n) ' CFG
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
     echo -e "$CNT - Copying config files..."
-    for DIR in hypr kitty mako swaylock waybar wlogout wofi 
+    for DIR in hypr kitty mako swaylock waybar wlogout wofi gtk-3.0
     do 
         DIRPATH=~/.config/$DIR
         if [ -d "$DIRPATH" ]; then 
@@ -181,6 +181,11 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
         # Este comando asume que las carpetas "hypr", "kitty", etc., están en el directorio actual.
         cp -R $DIR ~/.config/ &>> $INSTLOG
     done
+
+    # setting custom cursor folder
+    mkdir -p ~/.icons
+    cp -R Nordzy-cursors ~/.icons/
+    sudo cp -R Nordzy-cursors /usr/share/icons/
 
     # Set some files as exacutable
     echo -e "$CNT - Setting some file as executable." 
