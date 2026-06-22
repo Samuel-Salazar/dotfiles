@@ -91,7 +91,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     
     #Stage 1
     echo -e "\n$CNT - Stage 1 - Installing main components, this may take a while..."
-    for SOFTWR in hyprland kitty waybar swww swaylock-effects wofi wlogout mako xdg-desktop-portal-hyprland swappy grim slurp thunar
+    for SOFTWR in hyprland kitty waybar awww swaylock-effects wofi wlogout mako xdg-desktop-portal-hyprland swappy grim slurp thunar nwg-look
     do
         #First lets see if the package is there
         if yay -Qs $SOFTWR > /dev/null ; then
@@ -110,7 +110,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
 
     #Stage 2
     echo -e "\n$CNT - Stage 2 - Installing additional tools and utilities, this may take a while..."
-    for SOFTWR in polkit-gnome python-requests pamixer pavucontrol brightnessctl bluez bluez-utils blueman network-manager-applet gvfs thunar-archive-plugin file-roller btop pacman-contrib
+    for SOFTWR in polkit-gnome python-requests pamixer pavucontrol brightnessctl bluez bluez-utils blueman network-manager-applet nm-connection-editor gvfs thunar-archive-plugin file-roller btop pacman-contrib xdg-user-dirs
     do
         #First lets see if the package is there
         if yay -Qs $SOFTWR > /dev/null ; then
@@ -129,7 +129,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
 
     #Stage 3
     echo -e "\n$CNT - Stage 3 - Installing theme and visual related tools and utilities, this may take a while..."
-    for SOFTWR in starship ttf-jetbrains-mono-nerd noto-fonts-emoji lxappearance xfce4-settings sddm-git qt5-svg qt5-quickcontrols2 qt5-graphicaleffects
+    for SOFTWR in starship ttf-jetbrains-mono-nerd noto-fonts-emoji lxappearance xfce4-settings sddm-git qt5-svg qt5-quickcontrols2 qt5-graphicaleffects jq
     do
         #First lets see if the package is there
         if yay -Qs $SOFTWR > /dev/null ; then
@@ -159,6 +159,10 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     # Clean out other portals
     echo -e "$CNT - Cleaning out conflicting xdg portals..."
     yay -R --noconfirm xdg-desktop-portal-gnome xdg-desktop-portal-gtk &>> $INSTLOG
+
+    # Create Folders
+    echo -e "$CNT - Creating folders in home direcotory..."
+    xdg-user-dirs-update &>> $INSTLOG
 fi
 
 ### Copy Config Files ###
