@@ -25,13 +25,19 @@ hl.config({
     },
 
     decoration = {
+        wobble = {
+            enabled = true,
+            stiffness = 150,
+            damping = 15,
+            intensity = 0.4
+        },
         rounding = 5,
         blur = {
             enabled = true,
             size = 7,
-            passes = 4,
+            passes = 1,
             new_optimizations = true,
-            ignore_opacity = false
+            ignore_opacity = true
         },
         shadow = {
             enabled = true,
