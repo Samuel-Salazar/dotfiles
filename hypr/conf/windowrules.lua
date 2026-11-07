@@ -6,6 +6,7 @@ hl.window_rule({ match = { class = "kitty" }, float = false })
 hl.window_rule({ match = { class = "chromium" }, float = false })
 hl.window_rule({ match = { class = "com.microsoft.VSCode" }, float = false })
 hl.window_rule({ match = { class = "steam", title = "Steam" }, float = false })
+hl.window_rule({ match = { class = "ONLYOFFICE.*"}, float = false })
 
 -- Reglas de Opacidad
 hl.window_rule({ match = { class = "kitty" }, opacity = "0.7" })
